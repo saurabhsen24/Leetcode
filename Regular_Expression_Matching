@@ -1,0 +1,57 @@
+Given an input string s and a pattern p, implement regular expression matching with support for '.' and '*' where:
+
+'.' Matches any single character
+'*' Matches zero or more of the preceding element.
+The matching should cover the entire input string (not partial).
+
+
+
+Soln:
+
+
+   int solve(int i,int j,string& s,string& p,vector<vector<int>>& dp){
+        if(i<0 and j<0)return true;
+        if(i>=0 and j<0)return false;
+        if(i<0 and j>=0){
+            while(j>=0 and p[j]=='*'){
+                j-=2;
+            }
+            
+            return (j<0);
+        }
+        
+        if(dp[i][j]!=-1)return dp[i][j];
+        
+        if(s[i]==p[j] or p[j]=='.'){
+            return dp[i][j]=solve(i-1,j-1,s,p,dp);
+        }
+        
+        if(p[j]=='*'){
+            if(p[j-1]==s[i] or p[j-1]=='.'){
+                return dp[i][j]=solve(i-1,j,s,p,dp) or solve(i,j-2,s,p,dp);
+            }else{
+                return dp[i][j]=solve(i,j-2,s,p,dp);
+            }
+        }
+        
+        return false;
+    }
+    
+    bool isMatch(string s, string p) {
+        int n=s.size();
+        int m=p.size();
+        vector<vector<int>> dp(n,vector<int>(m,-1));
+        return solve(n-1,m-1,s,p,dp);
+    }
+    
+    
+   Intution:
+   
+   s[i]==p[j] or p[j]=='.' means both the character matches and '.' matches any character so we need to recur (i-1,j-1) state.
+   If p[j]=='*' -> '*' can match any no character given preceding letter should be matching with the current character and it can vanish to null.
+   
+   For ex: s = "aaaa" and p = "a*"  here '*' can match 'aaa' so new state can be (i-1,j) state as j stands on '*' denoting it can match multiple character 'a'.
+   If s = "", p="c*" here 'c*' can become empty so new state can be (i,j-2) [ 'c*' no longer exists as 'c*' can be empty as well]
+   If s="a" p="ab*" the preceding character of '*' doesn't match with 'a' in text so there is one state possible (i,j-2)
+   If s="aa" p="c*a*" here preceding character of '*' matches with text so there can be 2 cases (i-1,j) [multiple match] or (i,j-2) [making "a*" null]
+   
