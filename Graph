@@ -25,3 +25,18 @@
 25 - Number of Provinces 
 26 - Number of Operations to make Connected
 27- Most Stones Removed with Same Row or Column
+
+
+Dijktra Algo specific question
+--------------------------------
+
+1. The Maze III
+2. The Maze II
+3. Network Delay Time
+4. Cheapest Flights Within K Stops
+5. Reachable Nodes In Subdivided Graph
+6. Path with Maximum Probability
+7. Find the City With the Smallest Number of Neighbors at a Threshold Distance
+8. Minimum Cost to Make at Least One Valid Path in a Grid
+9. Path With Minimum Effort
+10. Number of Restricted Paths From First to Last Node
