@@ -5,6 +5,7 @@ Binary Search
 154. Find Minimum in Rotated Sorted Array II
 33. Search in Rotated Sorted Array
 162. Find Peak Element
+69. Sqrt(x)
 
 Similar problem on Leetcode -
 
