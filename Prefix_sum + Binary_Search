@@ -5,6 +5,7 @@ Problems based on Prefix Sum+Binary Search : :
 1862. Sum of Floored Pairs - https://leetcode.com/problems/sum-of-floored-pairs/
 1889. Minimum Space Wasted From Packaging - https://leetcode.com/problems/minimum-space-wasted-from-packaging/
 1894. Find the Student that Will Replace the Chalk - https://leetcode.com/problems/find-the-student-that-will-replace-the-chalk/
+2602. Minimum Operations to Make All Array Elements Equal
 
 Problems based on Prefix Sum : :
 560. Subarray Sum Equals K - https://leetcode.com/problems/subarray-sum-equals-k/
